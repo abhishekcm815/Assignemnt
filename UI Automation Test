@@ -40,3 +40,4 @@ Thread.sleep(2000);
 public void MarkItRead() {
 
 webElement MarkItReadButton = driver.findElement(By.className("Want to Read")).click();
+}
