@@ -1,0 +1,42 @@
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.chromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class LoginToGoodReads{
+
+@Test
+public void login(){
+
+System.setProperty("webdriver.chrome.driver", "path of driver");
+WebDriver driver = new ChromeDriver();
+driver.manage().window().maximize();
+driver.get("https://www.goodreads.com/user/sign_in");
+
+WebElement signInWithEmail = driver.findElement(By.xpath("//*[@id='choices']/div/a[2]/button");
+WebElement EmailTextField = driver.findElement(By.id("ap_email");
+WebElement PasswordTextField = driver.findElement(By.id("ap_password");
+webElement SignInButton = driver.findElement(By.id("signInSubmit");
+
+signInWithEmail.click();
+EmailTextField.sendKeys("abcd@gmail.com");
+PasswordTextField.sendKeys("password");
+SignInButton.click();
+}
+
+public void SearchBook(){
+
+webElement SearchTextField = driver.findElement(By.xpath("/html/body/div[2]/div/header/div[2]/div/div[2]/form/input[1]");
+webElement submitButton = driver.findElement(By.id("submit");
+SearchTextField.sendKeys("comedy");
+submitButton.click();
+Thread.sleep(2000);
+}
+
+public void MarkItRead() {
+
+webElement MarkItReadButton = driver.findElement(By.className("Want to Read")).click();
