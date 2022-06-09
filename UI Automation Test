@@ -39,5 +39,27 @@ Thread.sleep(2000);
 
 public void MarkItRead() {
 
-webElement MarkItReadButton = driver.findElement(By.className("Want to Read")).click();
+webElement MarkItReadButton = driver.findElement(By.xpath("//div[@id='1_book_6656']/div/form/button/span)).click();
 }
+
+public void RemoveFromBookList() {
+
+webElement MoveToMainMenu = driver.findElement(By.xpath("/html/body/div[2]/div[3]/div[1]/div[2]/div[2]/table/tbody/tr[1]/td[2]/a/span")).click();
+webElement ReadButton = driver.findElement(By.xpath("//*[@id='__next']/div[1]/main/div[1]/div[1]/div/div[2]/div[1]/div/button")).click();
+Thread.sleep(2000);
+webElement CancelButton = driver.findElement(By.xpath("/html/body/div[3]/div/div[3]/div[1]/button");
+Alert alert = driver.switchTo().alert();
+Thread.sleep(2000);
+alert.accept();
+}
+
+public void LogOut(){
+
+webElement AccountButton = driver.findElement(By.xpath("//*[@id='__next']/header/div[2]/nav/ul/li[5]/div/button/span/div");
+Actions act = new Actions(driver);
+act.moveToElement(AccountButton).perform();
+Thread.sleep(2000);
+webElemeent LogoutLink = driver.findElement(By.xpath("//*[@id='__next']/header/div[2]/nav/ul/li[5]/div/div/div/div/div/ul/li[15]/a")).click();
+}
+}
+
